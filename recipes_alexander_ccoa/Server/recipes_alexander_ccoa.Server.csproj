@@ -7,10 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="6.0.3" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\recipes_alexander_ccoa.Core\recipes_alexander_ccoa.Core.csproj" />
     <ProjectReference Include="..\Client\recipes_alexander_ccoa.Client.csproj" />
     <ProjectReference Include="..\Shared\recipes_alexander_ccoa.Shared.csproj" />
   </ItemGroup>

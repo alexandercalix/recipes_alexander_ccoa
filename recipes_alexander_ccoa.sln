@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "recipes_alexander_ccoa.Server", "recipes_alexander_ccoa\Server\recipes_alexander_ccoa.Server.csproj", "{76C49608-8768-4DED-930A-5E5190BAE904}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "recipes_alexander_ccoa.Server", "recipes_alexander_ccoa\Server\recipes_alexander_ccoa.Server.csproj", "{76C49608-8768-4DED-930A-5E5190BAE904}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "recipes_alexander_ccoa.Client", "recipes_alexander_ccoa\Client\recipes_alexander_ccoa.Client.csproj", "{EA291AFF-F918-41FA-923E-761AB5D5734D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "recipes_alexander_ccoa.Client", "recipes_alexander_ccoa\Client\recipes_alexander_ccoa.Client.csproj", "{EA291AFF-F918-41FA-923E-761AB5D5734D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "recipes_alexander_ccoa.Shared", "recipes_alexander_ccoa\Shared\recipes_alexander_ccoa.Shared.csproj", "{0F7FDE72-4AAF-4BF5-8152-075B9A7FCC75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "recipes_alexander_ccoa.Shared", "recipes_alexander_ccoa\Shared\recipes_alexander_ccoa.Shared.csproj", "{0F7FDE72-4AAF-4BF5-8152-075B9A7FCC75}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "recipes_alexander_ccoa.Core", "recipes_alexander_ccoa.Core\recipes_alexander_ccoa.Core.csproj", "{E5A93980-63A2-4B70-92A6-4907DE3C957F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "recipes_alexander_ccoa.test", "recipes_alexander_ccoa.test\recipes_alexander_ccoa.test.csproj", "{FB6C2F0E-8DFF-4FCC-AFDA-E4AB85DBD3F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{0F7FDE72-4AAF-4BF5-8152-075B9A7FCC75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F7FDE72-4AAF-4BF5-8152-075B9A7FCC75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F7FDE72-4AAF-4BF5-8152-075B9A7FCC75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5A93980-63A2-4B70-92A6-4907DE3C957F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5A93980-63A2-4B70-92A6-4907DE3C957F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5A93980-63A2-4B70-92A6-4907DE3C957F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5A93980-63A2-4B70-92A6-4907DE3C957F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB6C2F0E-8DFF-4FCC-AFDA-E4AB85DBD3F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB6C2F0E-8DFF-4FCC-AFDA-E4AB85DBD3F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB6C2F0E-8DFF-4FCC-AFDA-E4AB85DBD3F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB6C2F0E-8DFF-4FCC-AFDA-E4AB85DBD3F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

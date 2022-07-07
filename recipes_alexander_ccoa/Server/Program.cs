@@ -1,4 +1,7 @@
 using Microsoft.AspNetCore.ResponseCompression;
+using recipes_alexander_ccoa.Core.Data;
+using recipes_alexander_ccoa.Core.Models;
+using recipes_alexander_ccoa.Core.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +9,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
+
+builder.Services.AddScoped<recipesContext>();
+builder.Services.AddScoped<crudService<Recetas>>();
+builder.Services.AddScoped<crudService<Motores>>() ;
+
 
 var app = builder.Build();
 

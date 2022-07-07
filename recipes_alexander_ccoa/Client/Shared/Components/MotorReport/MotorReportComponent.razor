@@ -1,0 +1,33 @@
+﻿@using BlazorDateRangePicker
+
+@Motor
+
+@code {
+    private string _motor;
+    private DateRange _range;
+
+    [Parameter]
+    public string Motor
+    {
+        get
+        {
+            return _motor;
+        }
+        set
+        {
+            Console.WriteLine("Changed Motor" + value);
+            _motor=value;
+        }
+    }
+
+    [Parameter]
+    public DateRange Range
+    {
+        get { return _range; }
+        set
+        {
+            Console.WriteLine("Changed Range" + value.Start);
+            _range = value;
+        }
+    }
+}

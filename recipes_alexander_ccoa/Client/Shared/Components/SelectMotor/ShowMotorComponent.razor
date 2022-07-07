@@ -1,0 +1,73 @@
+﻿@using recipes_alexander_ccoa.Client.States
+@inject HttpService http
+@inject MotorFilterStatus motorFilterStatus 
+@if (filter != null && filter.motors != null)
+{
+        <select class="form-control" onchange="@ChangeMotor" value="@filter.motors" >
+            
+            @foreach (var i in filter.motors)
+            {
+                <option value="@i">@i</option>
+            }
+        </select>
+}
+else if (isLoading)
+{
+    <div class="mx-0 p-3">
+        <div class="spinner-border text-primary" role="status">
+            <span class="sr-only"></span>
+        </div>
+    </div>
+}
+else if (isError)
+{
+
+    <div class="mx-0 p-2">
+
+        <div class="alert alert-danger" role="alert">
+            Error al cargar informacion
+        </div>
+
+        <button class="btn btn-primary mt-2" onclick="GetData">Intentar de Nuevo</button>
+    </div>
+
+
+}
+
+@code {
+
+    [Parameter]
+    public EventCallback<string> OnChange { get; set; }
+
+    MotorFilterModel filter;
+
+    bool isLoading = false;
+    bool isError = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        isLoading = true;
+        isError=false;
+
+        motorFilterStatus.StateEvent += StateChanged;
+
+        await Task.Delay(2000);
+
+        StateHasChanged();
+
+
+    }
+
+    void StateChanged(object sender,MotorFilterModel model)
+    {
+        filter= model;
+        StateHasChanged();
+    }
+
+    async Task ChangeMotor(ChangeEventArgs e)
+    {
+        motorFilterStatus.SetStatus(e.Value.ToString(), filter.Start, filter.End);
+    }
+
+
+}

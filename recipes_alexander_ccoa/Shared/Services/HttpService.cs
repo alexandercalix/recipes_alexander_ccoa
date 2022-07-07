@@ -21,11 +21,12 @@ namespace recipes_alexander_ccoa.Shared.Services
         }
 
 
-        public async Task<T> Run<T>(string url, HttpMethod httpMethod, object data )
+        public async Task<T> Run<T>(string url, HttpMethod httpMethod , object data = null )
         {
+            
 
             HttpRequestMessage msg = new HttpRequestMessage(httpMethod, url);
-            msg.Content = JsonContent.Create(msg);
+            if(data != null)msg.Content = JsonContent.Create(msg);
 
             HttpResponseMessage result = await _httpClient.SendAsync(msg);
 

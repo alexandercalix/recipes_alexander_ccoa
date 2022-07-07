@@ -1,7 +1,86 @@
 ﻿@page "/maintenance"
+@using BlazorDateRangePicker
+@using recipes_alexander_ccoa.Shared.DTO
 
-<h3>Maintenance</h3>
+@inject MotorFilterStatus status
+@inject HttpService http
+@inject IJSRuntime js
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 col-md-5 mt-2">
+            <label>Motor</label>
+
+            @if (motors != null)
+            {
+                <select class="form-control" @bind="motorSelected">
+                    @foreach (var i in motors)
+                    {
+                        <option value="@i">@i</option>
+                    }
+                </select>
+            }
+        </div>
+
+        <div class="col-sm-12 col-md-5 mt-2">
+            <label>Rango de Tiempo</label>
+            <DateRangePicker class="form-control "
+                             placeholder="Seleccionar Fechas..."
+                             @bind-StartDate="@Start"
+                             @bind-EndDate="@End" />
+        </div>
+        <div class="col-sm-12 col-md-2 mt-2">
+            <button class="btn btn-primary mt-4" onclick="@(()=> GetData())">Buscar</button>
+        </div>
+
+    </div>
+    <div class="row">
+        @if (Report != null && !loading)
+        {
+
+            <MotorTimeLineComponent />
+        }
+    </div>
+
+</div>
 
 @code {
+    IEnumerable<string> motors;
+
+    string motorSelected;
+    DateTimeOffset? Start { get; set; } = DateTime.Now.Date.AddDays(1);
+    DateTimeOffset? End { get; set; } = DateTime.Now.Date;
+
+
+    MotorReportDTO Report;
+
+    bool loading;
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        StateHasChanged();
+        Task.Run(GetMotors);
+    }
+
+    async Task GetMotors()
+    {
+        loading = true;
+        StateHasChanged();
+        motors = await http.Run<IEnumerable<string>>("api/motors", HttpMethod.Get, null);
+        motorSelected = motors.FirstOrDefault();
+        loading=false;
+        StateHasChanged();
+    }
+
+    async Task GetData()
+    {
+          loading = true;
+        StateHasChanged();
+        Report = await http.Run<MotorReportDTO>($"api/motors/{motorSelected}/{Start.Value.ToString("s")}/{End.Value.ToString("s")}", HttpMethod.Get, null);
+         loading=false;
+        StateHasChanged();
+
+    }
 
 }
+

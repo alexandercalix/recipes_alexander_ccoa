@@ -1,0 +1,26 @@
+﻿@using recipes_alexander_ccoa.Shared.DTO
+@inject IJSRuntime js
+
+<div>Hola</div>
+
+
+<div class="chart-container" style="position: relative; height:40vh; width:80vw">
+<canvas id="chartTimeLineMotor" width="400" height="400"></canvas>
+  
+</div>
+
+@code
+{
+    //[Parameter]
+    //public IEnumerable<MotorDTO> Data { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+       
+    }
+
+    protected override async Task OnAfterRenderAsync(bool first)
+    {
+         await js.InvokeVoidAsync("chartMotorTimeLine");
+    }
+   }
