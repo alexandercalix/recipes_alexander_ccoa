@@ -6,7 +6,7 @@ import { MotorStatusComponent } from "../../components/tables/MotorStatusCompone
 import { useHttp } from "../../hooks/useHttp";
 
 export const MaintenancePage = () => {
-  const [loading, status, data, Run] = useHttp();
+  const [loading, status, data, Run, urlBase] = useHttp();
   const [dateRange, setDateRange] = useState();
   const [motor, setMotor] = useState();
   const statusC = [
@@ -45,7 +45,7 @@ export const MaintenancePage = () => {
               target="_blank"
               className="btn btn-success"
               style={{ width: 120 }}
-              href={`http://localhost:5273/api/motors/excel/${motor}/${dateRange[0].toISOString()}/${dateRange[1].toISOString()}`}
+              href={`${urlBase}motors/excel/${motor}/${dateRange[0].toISOString()}/${dateRange[1].toISOString()}`}
             >
               Excel
             </a>

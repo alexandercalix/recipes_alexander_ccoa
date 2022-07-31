@@ -5,7 +5,7 @@ import { RecipesTableComponent } from "../../components/tables/RecipesTableCompo
 import { useHttp } from "../../hooks/useHttp";
 
 export const RecipesPage = () => {
-  const [loading, status, data, Run] = useHttp();
+  const [loading, status, data, Run, urlBase] = useHttp();
   const [graphData, setGraphData] = useState({
     labels: [],
     values: [],
@@ -88,7 +88,7 @@ export const RecipesPage = () => {
                       target="_blank"
                       className="btn btn-success"
                       style={{ width: 120 }}
-                      href={`http://localhost:5273/api/recipes/excel/${dateRange[0].toISOString()}/${dateRange[1].toISOString()}`}
+                      href={`${urlBase}/recipes/excel/${dateRange[0].toISOString()}/${dateRange[1].toISOString()}`}
                     >
                       Excel
                     </a>

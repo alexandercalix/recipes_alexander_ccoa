@@ -5,11 +5,12 @@ export const useHttp = () => {
   const [status, setStatus] = useState({ error: false, msg: "" });
   const [data, setData] = useState();
 
+  const [ urlBase, setUrlBase ] = useState(!process.env.NODE_ENV || process.env.NODE_ENV === 'development' ? "http://localhost:5273/api/" : "http://localhost/api/");
+
   const Run = ({ url }) => {
-    console.log("ABC")
     if (url) setStatus({ ...status, error: false });
     setLoading(true);
-    const urlBase = !process.env.NODE_ENV || process.env.NODE_ENV === 'development' ? "http://localhost:5273/api/" : "http://localhost/api/"
+  
 
     fetch(urlBase+url)
       .then((x) => x.json())
@@ -26,5 +27,5 @@ export const useHttp = () => {
       });
   };
 
-  return [loading, status, data, Run];
+  return [loading, status, data, Run, urlBase];
 };
