@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@wojtekmaj/react-daterange-picker": "^3.4.0",
+    "chart.js": "^2.9.4",
+    "react-chartjs-3": "^2.7.7",
+    "react-datepicker": "^4.8.0",
+    "react-router-dom": "^6.3.0",
+    "timelines-chart": "^2.11.5"
+  }
+}

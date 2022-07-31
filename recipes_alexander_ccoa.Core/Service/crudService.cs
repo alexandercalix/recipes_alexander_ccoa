@@ -1,7 +1,9 @@
 ﻿using recipes_alexander_ccoa.Core.Data;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -37,6 +39,19 @@ namespace recipes_alexander_ccoa.Core.Service
             catch (Exception)
             {
                 throw new Exception("Error con SQL");
+            }
+        }
+
+        public IEnumerable<TResult> GetLast<TKey,TResult>(Func<T,TKey> groupBy, Func<IGrouping<TKey,T>,TResult> select)
+        {
+            try
+            {
+                return ctx.Set<T>().GroupBy(groupBy).Select(select).ToList();
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
 

@@ -37,7 +37,7 @@
         @if (Report != null && !loading)
         {
 
-            <MotorTimeLineComponent />
+            <MotorTimeLineComponent Data="Report.history"/>
         }
     </div>
 
@@ -74,7 +74,8 @@
 
     async Task GetData()
     {
-          loading = true;
+        loading = true;
+        Report = null;
         StateHasChanged();
         Report = await http.Run<MotorReportDTO>($"api/motors/{motorSelected}/{Start.Value.ToString("s")}/{End.Value.ToString("s")}", HttpMethod.Get, null);
          loading=false;

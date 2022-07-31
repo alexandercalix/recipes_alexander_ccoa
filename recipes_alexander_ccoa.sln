@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "recipes_alexander_ccoa.Server", "recipes_alexander_ccoa\Server\recipes_alexander_ccoa.Server.csproj", "{76C49608-8768-4DED-930A-5E5190BAE904}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "recipes_alexander_ccoa.Client", "recipes_alexander_ccoa\Client\recipes_alexander_ccoa.Client.csproj", "{EA291AFF-F918-41FA-923E-761AB5D5734D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "recipes_alexander_ccoa.Shared", "recipes_alexander_ccoa\Shared\recipes_alexander_ccoa.Shared.csproj", "{0F7FDE72-4AAF-4BF5-8152-075B9A7FCC75}"
@@ -13,16 +11,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "recipes_alexander_ccoa.Core
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "recipes_alexander_ccoa.test", "recipes_alexander_ccoa.test\recipes_alexander_ccoa.test.csproj", "{FB6C2F0E-8DFF-4FCC-AFDA-E4AB85DBD3F4}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "recipes_alexander_ccoa.web", "recipes_alexander_ccoa.web\recipes_alexander_ccoa.web.csproj", "{C5B096BD-7134-4F65-BDAB-2277C2243C54}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{76C49608-8768-4DED-930A-5E5190BAE904}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{76C49608-8768-4DED-930A-5E5190BAE904}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{76C49608-8768-4DED-930A-5E5190BAE904}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{76C49608-8768-4DED-930A-5E5190BAE904}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EA291AFF-F918-41FA-923E-761AB5D5734D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EA291AFF-F918-41FA-923E-761AB5D5734D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA291AFF-F918-41FA-923E-761AB5D5734D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{FB6C2F0E-8DFF-4FCC-AFDA-E4AB85DBD3F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB6C2F0E-8DFF-4FCC-AFDA-E4AB85DBD3F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB6C2F0E-8DFF-4FCC-AFDA-E4AB85DBD3F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5B096BD-7134-4F65-BDAB-2277C2243C54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5B096BD-7134-4F65-BDAB-2277C2243C54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5B096BD-7134-4F65-BDAB-2277C2243C54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5B096BD-7134-4F65-BDAB-2277C2243C54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

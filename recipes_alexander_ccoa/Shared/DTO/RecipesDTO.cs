@@ -29,4 +29,10 @@ namespace recipes_alexander_ccoa.Shared.DTO
             this.quantity=quantity;
         }
     }
+
+    public class RecipeReportDTO
+    {
+        public DateTime date { get; set; }
+        public decimal Total { get; set; }
+    }
 }

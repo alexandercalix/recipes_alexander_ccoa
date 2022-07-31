@@ -26,11 +26,14 @@ namespace recipes_alexander_ccoa.Shared.DTO
     {
         public byte status { get; set; }
         public TimeSpan Time { get; set; }
+
+        public decimal Percentage { get; set; }
+
     }
 
     public class MotorReportDTO
     {
-        public IEnumerable<MotorOEEDTO> oee { get; set; }
+        public IEnumerable<MotorDetailOEEDTO> oee { get; set; }
         public IEnumerable<MotorDTO> history { get; set; }
     }
 }
